@@ -83,6 +83,7 @@ devServer : {
 5. Addition of <code>Source map </code> , This is for debuging your code when action problem is in the source code 
      - Easy to understand the source of error within your code
      - Add this line as another block of statement in root of <code>module.export</code>
+      (Recommended choice for production builds with high quality SourceMaps.)[https://webpack.js.org/configuration/devtool/#root]
      ```js
        devtool: "source-map",
       ```
