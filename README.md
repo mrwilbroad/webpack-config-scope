@@ -28,33 +28,31 @@
    const htmlwebpackplugin = require("html-webpack-plugin");
    const HtmlWebpackPlugin = require("html-webpack-plugin");
    module.exports = {
-  mode: "production",
-  entry: [
-    path.resolve(__dirname, "src/index.js")
-    ],
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "[name]-[contenthash].js",
-  },
-  module: {
-    rules: [
-      {
+    mode: "production",
+    entry: [
+        path.resolve(__dirname, "src/index.js")
+        ],
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "[name]-[contenthash].js",
+        },
+    module: {
+        rules: [
+            {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
-      },
-    ],
-  },
-
-  plugins: [
-      new HtmlWebpackPlugin({
-        title : "WEBPACK Dev",
-        filename: "index.html",
-        template:  "public/index.html"
-      })
-  ],
-  };
-  ```
-
+        },
+        ],
+        },
+        plugins: [
+            new HtmlWebpackPlugin({
+                title : "WEBPACK Dev",
+                filename: "index.html",
+                template:  "public/index.html"
+                })
+                ],
+                };
+    ```
 
 3. ## Addition Server configuration 
 ```js
