@@ -1,24 +1,24 @@
 # webpack-config-scope
 
 1. ## During css loading , this was configured to make sure even css style are transformed into appropriate bundle
-```js
-module.exports = {
-  mode: "production",
-  entry: [path.resolve(__dirname, "src/index.js")],
-  output: {
-    path: path.resolve(__dirname, "dist"),
-    filename: "bundle.js",
-  },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: ["style-loader", "css-loader", "sass-loader"],
-      },
-    ],
-  },
-};
-```
+    ```js
+    module.exports = {
+    mode: "production",
+    entry: [path.resolve(__dirname, "src/index.js")],
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js",
+    },
+    module: {
+        rules: [
+        {
+            test: /\.scss$/,
+            use: ["style-loader", "css-loader", "sass-loader"],
+        },
+        ],
+    }
+    };
+    ```
 
 
 
@@ -34,7 +34,7 @@ module.exports = {
     ],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "bundle-[fullhash].js",
+    filename: "[name]-[contenthash].js",
   },
   module: {
     rules: [
@@ -53,5 +53,20 @@ module.exports = {
       })
   ],
   };
+  ```
 
-```
+
+3. ## Addition Server configuration 
+```js
+devServer : {
+      static : {
+        directory : path.resolve(__dirname,"dist")
+      },
+      port: 3000,
+      open: true,
+      hot: true,
+      compress: true,
+      historyApiFallback : true
+  },
+  ```
+
