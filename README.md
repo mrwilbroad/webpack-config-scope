@@ -1,6 +1,6 @@
 # webpack-config-scope
 
-## During css loading , this was configured
+## During css loading , this was configured to make sure even css style are transformed into appropriate bundle
 ```js
 module.exports = {
   mode: "production",
