@@ -1,5 +1,4 @@
 const path = require("node:path");
-const htmlwebpackplugin = require("html-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
@@ -10,6 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle-[fullhash].js",
+    clean : true
   },
   devServer : {
       static : {

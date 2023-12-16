@@ -68,3 +68,14 @@ devServer : {
   },
   ```
 
+
+  4. But on loading and refreshing every time new HashFile as output is generated , to avoid multiple filed to be generated 
+       - in <code>output</code> Block add <code> clean: true</code>
+        ```js
+        output: {
+            path: path.resolve(__dirname, "dist"),
+            filename: "bundle-[fullhash].js",
+            clean : true
+            },
+        ```
+
